@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,600,800');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --ff: 'Fira Sans', sans-serif;
+  --fw-n: 300;
+  --fw-m: 600;
+  --fw-b: 800;
+  --fs-1: 6.5rem;
+  --fs-2: 5rem;
+  --fs-3: 3.5rem;
+  --fs-4: 2rem;
+  --fs-5: 1.5rem;
+  --fs-6: 1.2rem;
+  --fs-p: 1rem;
+  --fs-s: 0.8rem;
+  --primary-clr: #115e59;
+  --secondary-clr: #34d399;
+  --secondary-clr-light: #a7f3d0;
+  --accent-clr: #fb7185;
+  --accent-clr-dark:#f43f5e;
+  --opaque-background: rgba(123, 107, 107, 0.25);
+}
+
+body {
+  font-family: var(--ff);
+}
+
+.container {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  place-items: center;
+  margin: auto;
+  max-width: 300px;
+}
+
+.cells {
+  width: 100px;
+  height: 100px;
+  background-color: var(--accent-clr);
+  color: white;
+  border: 1px solid #000;
+}
+
+.header {
+  text-align: center;
+  margin: 2rem;
+  font-size: var(--fs-4);
+}
