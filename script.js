@@ -29,11 +29,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const cells = document.querySelectorAll('.cells');
     cells.forEach(cell => {
       cell.addEventListener('click', (event) => {
-        if(!event.target.innerText) {
+        const index = event.target.dataset.index;
+
+        if(!event.target.innerText && index !== undefined) {
           event.target.innerText = player.currentPlayer;
+          Gameboard.arr[index] = player.currentPlayer;
           player.currentPlayer = player.currentPlayer === 'X' ? 'O' : 'X';
         }
-        
       });
     });
   })();
