@@ -34,10 +34,35 @@ document.addEventListener("DOMContentLoaded", function() {
         if(!event.target.innerText && index !== undefined) {
           event.target.innerText = player.currentPlayer;
           Gameboard.arr[index] = player.currentPlayer;
+          if(checkWin(Gameboard.arr)) {
+            alert(`${player.currentPlayer} wins`);
+          };
           player.currentPlayer = player.currentPlayer === 'X' ? 'O' : 'X';
         }
       });
     });
+
+    const checkWin = (arr) => {
+      const winningCombs = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+      ];
+
+      for (let comb of winningCombs) {
+        const [a, b, c] = comb;
+        if (arr[a] && arr[a] === arr[b] && arr[a] === arr[c]) {
+          return true;
+        }
+      }
+      return false;
+    }
+
   })();
 
 
