@@ -45,6 +45,10 @@ body {
   background-color: var(--accent-clr);
   color: white;
   border: 1px solid #000;
+  font-size: var(--fs-2);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
 }
 
 .header {

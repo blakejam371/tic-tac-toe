@@ -15,8 +15,30 @@ document.addEventListener("DOMContentLoaded", function() {
       } else {
         console.error('Container element not found.');
       }
+      return { arr };
     })();
-  
-  
+    
+  const Player = () => {
+    let currentPlayer = 'X';
+    return { currentPlayer };
+  }
+
+  const Game = (function() {
+    const player = Player(); 
+
+    const cells = document.querySelectorAll('.cells');
+    cells.forEach(cell => {
+      cell.addEventListener('click', (event) => {
+        if(!event.target.innerText) {
+          event.target.innerText = player.currentPlayer;
+          player.currentPlayer = player.currentPlayer === 'X' ? 'O' : 'X';
+        }
+        
+      });
+    });
+  })();
+
+
+  return { Gameboard, Game }
   })();
 });
