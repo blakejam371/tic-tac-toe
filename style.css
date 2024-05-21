@@ -77,6 +77,16 @@ body {
   font-family: var(--ff);
   text-align: center;
   font-size: var(--fs-6);
-  font-weight: var(--fw-n);
+  font-weight: var(--fw-m);
   background-color: var(--primary-clr);
+  color: white;
+  height: auto;
+  width: 100px;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+}
+
+.resetButton:hover {
+  background-color: var(--secondary-clr);
 }

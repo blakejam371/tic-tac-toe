@@ -42,12 +42,32 @@ document.addEventListener("DOMContentLoaded", function() {
             let reset = document.createElement('button');
             reset.innerText = 'Reset Game';
             reset.classList.add('resetButton');
+            reset.addEventListener('click', resetGame)
             Gameboard.container.insertAdjacentElement('afterend', reset);
           };
           player.currentPlayer = player.currentPlayer === 'X' ? 'O' : 'X';
         }
       });
     });
+
+    const resetGame = () => {
+      // reset the array
+      Gameboard.arr = Array(9).fill(null);
+      // remove the text content from the cells
+      cells.forEach(cell => {
+        cell.innerText = '';
+      })
+      // remove the result message
+      const resultMessage = document.querySelector('.result');
+      if(resultMessage) {
+        resultMessage.remove();
+      }
+      // remove the reset button
+      const resetButton = document.querySelector('.resetButton')
+      if(resetButton) {
+        resetButton.remove();
+      }
+    }
 
     const checkWin = (arr) => {
       const winningCombs = [
