@@ -34,9 +34,9 @@ body {
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  place-items: center;
+  justify-content: center;
   margin: auto;
-  max-width: 300px;
+  max-width: 10%;
 }
 
 .cells {
@@ -46,13 +46,25 @@ body {
   color: white;
   border: 1px solid #000;
   font-size: var(--fs-2);
+  font-weight: var(--fw-m);
   display: grid;
   place-content: center;
   cursor: pointer;
+}
+
+.cells:hover {
+  background-color: var(--accent-clr-dark);
 }
 
 .header {
   text-align: center;
   margin: 2rem;
   font-size: var(--fs-4);
+}
+
+.result {
+  text-align: center;
+  margin: 2rem;
+  font-size: var(--fs-4);
+  font-weight: var(--fw-m);
 }

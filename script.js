@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
       } else {
         console.error('Container element not found.');
       }
-      return { arr };
+      return { arr, container };
     })();
     
   const Player = () => {
@@ -35,7 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
           event.target.innerText = player.currentPlayer;
           Gameboard.arr[index] = player.currentPlayer;
           if(checkWin(Gameboard.arr)) {
-            alert(`${player.currentPlayer} wins`);
+            let div = document.createElement('div');
+            div.innerText = `${player.currentPlayer} wins`;
+            div.classList.add('result');
+            Gameboard.container.insertAdjacentElement('afterend', div);
           };
           player.currentPlayer = player.currentPlayer === 'X' ? 'O' : 'X';
         }
