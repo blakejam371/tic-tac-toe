@@ -68,3 +68,15 @@ body {
   font-size: var(--fs-4);
   font-weight: var(--fw-m);
 }
+
+.resetButton {
+  margin-top: 1rem;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  font-family: var(--ff);
+  text-align: center;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-n);
+  background-color: var(--primary-clr);
+}

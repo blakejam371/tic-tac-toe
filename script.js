@@ -39,6 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
             div.innerText = `${player.currentPlayer} wins`;
             div.classList.add('result');
             Gameboard.container.insertAdjacentElement('afterend', div);
+            let reset = document.createElement('button');
+            reset.innerText = 'Reset Game';
+            reset.classList.add('resetButton');
+            Gameboard.container.insertAdjacentElement('afterend', reset);
           };
           player.currentPlayer = player.currentPlayer === 'X' ? 'O' : 'X';
         }
