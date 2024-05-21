@@ -56,6 +56,11 @@ body {
   background-color: var(--accent-clr-dark);
 }
 
+.cells.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .header {
   text-align: center;
   margin: 2rem;
@@ -90,3 +95,4 @@ body {
 .resetButton:hover {
   background-color: var(--secondary-clr);
 }
+

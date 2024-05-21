@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let cells = document.querySelectorAll('.cells');
 
       const resetGame = () => {
+        cells.forEach(cell => cell.classList.remove('disabled'));
         Gameboard.arr.fill(null);
         cells.forEach(cell => {
           cell.innerText = '';
@@ -44,11 +45,13 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       const createResetButton = () => {
+        // disable further clicks
+        cells.forEach(cell => cell.classList.add('disabled'));
         let reset = document.createElement('button');
-          reset.innerText = 'Reset Game';
-          reset.classList.add('resetButton');
-          reset.addEventListener('click', resetGame);
-          Gameboard.container.insertAdjacentElement('afterend', reset);
+        reset.innerText = 'Reset Game';
+        reset.classList.add('resetButton');
+        reset.addEventListener('click', resetGame);
+        Gameboard.container.insertAdjacentElement('afterend', reset);
       }
 
       const checkWin = (arr) => {
